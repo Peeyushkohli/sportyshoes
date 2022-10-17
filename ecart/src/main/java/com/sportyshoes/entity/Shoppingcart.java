@@ -1,0 +1,107 @@
+package com.sportyshoes.entity;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+
+
+
+//@ToString
+//@NoArgsConstructor
+
+//@AllArgsConstructor
+//@Setter
+
+//@Getter
+@Entity
+public class Shoppingcart {
+
+
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
+    private int productId;
+    private String productName;
+
+    private int quantity;
+    private float amount;
+    
+    public Shoppingcart() {
+    }
+
+    public Shoppingcart(int productId, String productName, int quantity, float amount) {
+        this.productId = productId;
+        this.productName = productName;
+        this.quantity = quantity;
+        this.amount = amount;
+    }
+
+    public Shoppingcart(int productId, int quantity) {
+        this.productId = productId;
+        this.quantity = quantity;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getProductId() {
+        return productId;
+    }
+
+    public void setProductId(int productId) {
+        this.productId = productId;
+    }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public float getAmount() {
+        return amount;
+    }
+
+    public void setAmount(float amount) {
+        this.amount = amount;
+    }
+
+    @Override
+    public String toString() {
+        return "ShoppingCart{" +
+                "id=" + id +
+                ", productId=" + productId +
+                ", productName='" + productName + '\'' +
+                ", quantity=" + quantity +
+                ", amount=" + amount +
+                '}';
+    }
+
+
+
+
+}
